@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visão Geral | Portal de Treinamento Fiscal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><span class="brand-badge">PF</span><span>Portal de Treinamento Fiscal</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a class="active" href="visao-geral.html">Visão Geral</a>
+        <a href="controle.html">Controle</a>
+        <a href="classificacao.html">Classificação</a>
+        <a href="fluxos.html">Fluxos</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content-hero">
+    <div class="container">
+      <div class="card">
+        <span class="kicker">Módulo 1</span>
+        <h1>Visão Geral do Sistema</h1>
+        <p>Este módulo apresenta a estrutura do ambiente no SharePoint, as bases que sustentam o processo e as ferramentas que apoiam a operação e a documentação.</p>
+        <div class="button-group">
+          <a class="btn btn-secondary" href="index.html">Voltar ao início</a>
+          <a class="btn btn-primary" href="controle.html">Próximo módulo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Estrutura de armazenamento</h2>
+        <p>A gestão do controle de notas está centralizada no SharePoint, com uso integrado de bibliotecas de documentos e listas.</p>
+        <ul class="check-list">
+          <li><strong>Clientes:</strong> pasta destinada aos relatórios de cadastro de clientes.</li>
+          <li><strong>Fornecedores:</strong> pasta destinada aos relatórios de cadastro de fornecedores.</li>
+          <li><strong>Histórico Entradas:</strong> armazenamento dos relatórios de notas já lançadas no sistema.</li>
+          <li><strong>SIEG / Pendências:</strong> recebimento dos relatórios de notas emitidas contra o CNPJ da empresa.</li>
+          <li><strong>SAC:</strong> armazenamento do modelo de planilha usado na integração de cobrança.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Bases de dados principais</h2>
+        <p>As automações e verificações operam sobre duas bases centrais, que sustentam a classificação e a prevenção de duplicidades.</p>
+        <div class="flow">
+          <div class="flow-step" data-step="1">
+            <strong>Base Cadastro Unificado</strong>
+            <p>Unifica os relatórios de clientes e fornecedores para consulta dos fluxos.</p>
+          </div>
+          <div class="flow-step" data-step="2">
+            <strong>Base Entrada NF-e</strong>
+            <p>Registra as notas que já passaram pelo processo de entrada no sistema.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container grid-2" style="margin-top:20px;">
+      <div class="card">
+        <h2>Atualização de relatórios</h2>
+        <p>A atualização segue uma lógica de continuidade para garantir integridade de dados e evitar perda de registros recentes.</p>
+        <ol class="timeline">
+          <li><strong>Frequência:</strong> o novo relatório parte da data da última atualização.</li>
+          <li><strong>Margem de segurança:</strong> repetir a última data evita perda de cadastros feitos após a geração anterior.</li>
+          <li><strong>Duplicidade controlada:</strong> os fluxos ignoram o que já existe, então a repetição não compromete a base.</li>
+        </ol>
+        <div class="note">A repetição da última data é uma medida de segurança do processo, não um erro de extração.</div>
+      </div>
+      <div class="card">
+        <h2>Ferramentas complementares</h2>
+        <ul class="check-list">
+          <li><strong>Planner:</strong> organização de melhorias, fluxos, manutenção, documentação e homologação.</li>
+          <li><strong>Documentação de Processos:</strong> biblioteca específica para manuais, apresentações e fluxogramas.</li>
+          <li><strong>Dashboard (Power BI):</strong> visão gerencial com filtros para acompanhamento da operação.</li>
+        </ul>
+        <div class="image-slot" style="margin-top:16px;">
+          <strong>Sugestão de imagem</strong>
+          <small>Aqui entra bem um print da estrutura do SharePoint ou do menu do site, porque ajuda a localizar o usuário no ambiente.</small>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">Módulo 1 concluído. Siga para o módulo de Controle.</div></footer>
+</body>
+</html>

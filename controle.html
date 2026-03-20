@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle | Portal de Treinamento Fiscal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><span class="brand-badge">PF</span><span>Portal de Treinamento Fiscal</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="visao-geral.html">Visão Geral</a>
+        <a class="active" href="controle.html">Controle</a>
+        <a href="classificacao.html">Classificação</a>
+        <a href="fluxos.html">Fluxos</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content-hero">
+    <div class="container">
+      <div class="card">
+        <span class="kicker">Módulo 2</span>
+        <h1>Controle e Exibições</h1>
+        <p>Este módulo mostra como a lista foi estruturada para organizar a tratativa por tipo de nota e evitar excesso de informação durante a operação.</p>
+        <div class="button-group">
+          <a class="btn btn-secondary" href="visao-geral.html">Módulo anterior</a>
+          <a class="btn btn-primary" href="classificacao.html">Próximo módulo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Exibição “Todos os Itens”</h2>
+        <p>É a base administrativa completa. Reúne colunas de cálculo, metadados de sistema, histórico e informações que nem sempre são necessárias para a tratativa diária.</p>
+        <div class="alert alert-warning">
+          Essa visualização é útil para administração e auditoria, mas não é a melhor escolha para a rotina operacional de cada tipo de nota.
+        </div>
+      </div>
+      <div class="card">
+        <h2>Exibições segmentadas</h2>
+        <p>A partir da base principal, foram criadas views com filtros fixos por tipo de cadastro. Isso separa o trabalho por contexto e deixa o uso mais intuitivo.</p>
+        <ul class="check-list">
+          <li><strong>Cliente</strong></li>
+          <li><strong>Consumo</strong></li>
+          <li><strong>Fornecedor</strong></li>
+          <li><strong>Misto</strong></li>
+          <li><strong>Sem Cadastro</strong></li>
+          <li><strong>Concluído</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top:20px;">
+      <div class="card">
+        <h2>Diferença de colunas por processo</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Exibição</th>
+                <th>Foco da tratativa</th>
+                <th>Exemplo de colunas relevantes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cliente</strong></td>
+                <td>Integração e retorno do SAC</td>
+                <td>Ticket, Observação SAC, Status de devolução</td>
+              </tr>
+              <tr>
+                <td><strong>Consumo</strong></td>
+                <td>Definição de responsável e cobrança</td>
+                <td>Responsável, Pronto para Envio, Tratativa</td>
+              </tr>
+              <tr>
+                <td><strong>Fornecedor</strong></td>
+                <td>Validação, manifestação e recebimento</td>
+                <td>Finalidade, Andamento, Tratativa</td>
+              </tr>
+              <tr>
+                <td><strong>Misto</strong></td>
+                <td>Tratamento manual</td>
+                <td>Tipo de cadastro, validação do CNPJ</td>
+              </tr>
+              <tr>
+                <td><strong>Sem Cadastro</strong></td>
+                <td>Inclusão de novo registro</td>
+                <td>CNPJ, nome, conferência de base</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">O objetivo das exibições segmentadas é reduzir ruído visual e acelerar a leitura do operador.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">Módulo 2 concluído. Siga para Classificação.</div></footer>
+</body>
+</html>

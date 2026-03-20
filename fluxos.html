@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluxos Operacionais | Portal de Treinamento Fiscal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><span class="brand-badge">PF</span><span>Portal de Treinamento Fiscal</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="visao-geral.html">Visão Geral</a>
+        <a href="controle.html">Controle</a>
+        <a href="classificacao.html">Classificação</a>
+        <a class="active" href="fluxos.html">Fluxos</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="subnav">
+    <div class="container">
+      <a class="active" href="#consumo">Consumo</a>
+      <a href="#fornecedor">Fornecedor</a>
+      <a href="#cliente">Cliente</a>
+      <a href="#automacoes">Automações</a>
+    </div>
+  </div>
+
+  <section class="content-hero">
+    <div class="container">
+      <div class="card">
+        <span class="kicker">Módulo 4 e 5</span>
+        <h1>Fluxos Operacionais e Automações</h1>
+        <p>Aqui está o núcleo do processo. Esta etapa concentra o que acontece depois da classificação: tratativa, gatilhos, integração com SAC e automações de apoio.</p>
+        <div class="button-group">
+          <a class="btn btn-secondary" href="classificacao.html">Módulo anterior</a>
+          <a class="btn btn-primary" href="quiz.html">Ir para o quiz</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container" id="consumo">
+      <div class="section-header">
+        <h2>Fluxo de Consumo</h2>
+        <p>Fluxo orientado à definição de responsável, disparo da cobrança e acompanhamento do retorno até a entrada no sistema.</p>
+      </div>
+      <div class="flow">
+        <div class="flow-step" data-step="1">
+          <strong>Status inicial</strong>
+          <p>A nota inicia com andamento em <strong>Analisar</strong> e status geral <strong>Aguardando Responsável</strong>.</p>
+        </div>
+        <div class="flow-step" data-step="2">
+          <strong>Ação manual</strong>
+          <p>Consultar o CNPJ no Organize, identificar o responsável e preencher a coluna correspondente.</p>
+        </div>
+        <div class="flow-step" data-step="3">
+          <strong>Gatilhos automáticos</strong>
+          <p>Com o responsável definido, o sistema atualiza status, tratativa, pronto para envio e andamento para <strong>Aguardando Cobrança</strong>.</p>
+        </div>
+        <div class="flow-step" data-step="4">
+          <strong>Retorno</strong>
+          <p>Após o envio do e-mail, o andamento passa para <strong>Aguardando Retorno</strong> e, com resposta, para <strong>Validar Retorno</strong>.</p>
+        </div>
+        <div class="flow-step" data-step="5">
+          <strong>Encerramento</strong>
+          <p>Quando a nota entra no sistema, a chave é identificada, a data de entrada é preenchida e o andamento passa para <strong>Resolvido</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="fornecedor" style="margin-top:40px;">
+      <div class="section-header">
+        <h2>Fluxo de Fornecedor</h2>
+        <p>O tratamento depende da finalidade da nota. A leitura correta dessa finalidade define qual regra deve ser aplicada.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Devolução e Ajuste</h3>
+          <div class="alert alert-danger"><strong>Regra de ouro:</strong> não se manifesta nota de devolução ou ajuste de fornecedor na lista de controle.</div>
+          <ul class="check-list">
+            <li>Validar a NF-e.</li>
+            <li>Se estiver dentro do período de controle, manifestar a NFO.</li>
+            <li>Alterar manualmente a nota atual para <strong>Concluído</strong>.</li>
+          </ul>
+          <div class="note">O sistema define automaticamente o contexto de validação e manifestação.</div>
+        </div>
+        <div class="card">
+          <h3>Finalidade Normal</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Status no painel</th>
+                  <th>Tratativa resultante</th>
+                  <th>Leitura operacional</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Agendada / Aprovada</td>
+                  <td><span class="status-pill await">Aguardando Recebimento</span></td>
+                  <td>Seguir com acompanhamento do recebimento.</td>
+                </tr>
+                <tr>
+                  <td>Disponível / Recebida</td>
+                  <td><span class="status-pill base">Logística</span></td>
+                  <td>Andamento direcionado para cobrança.</td>
+                </tr>
+                <tr>
+                  <td>Não Encontrada / Negada / Não compareceu / Agendamento cancelado</td>
+                  <td><span class="status-pill action">Manifestar</span></td>
+                  <td>Exige ação de manifestação.</td>
+                </tr>
+                <tr>
+                  <td>Reagendada</td>
+                  <td><span class="status-pill review">Verificar data</span></td>
+                  <td>Necessita nova validação de agendamento.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="cliente" style="margin-top:40px;">
+      <div class="section-header">
+        <h2>Fluxo de Cliente</h2>
+        <p>Fluxo com maior volume e maior dependência de integração com SAC. A leitura correta do status é essencial para manter o processo consistente.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Notas de Ajuste</h3>
+          <ul class="check-list">
+            <li>Seguem a mesma lógica da operação de fornecedor.</li>
+            <li>Não se manifesta a nota de ajuste diretamente.</li>
+            <li>Deve-se localizar a NFD referenciada, manifestar a NFD e concluir o ajuste.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Integração com SAC</h3>
+          <p>Nas devoluções, o preenchimento do status e do número do ticket é de responsabilidade do SAC, via planilha de integração.</p>
+          <div class="alert alert-warning">
+            A tabela abaixo é apenas uma referência visual para preenchimento correto do campo <strong>Status</strong>. Ela não é enviada ao SAC.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:20px;">
+        <h3>Tabela de referência para preenchimento do Status</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Significado fiscal</th>
+                <th>Tratativa resultante</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NFD Validada Transporte</td>
+                <td>Aguardando coleta da mercadoria.</td>
+                <td><span class="status-pill await">Aguardar</span> • Resolvido após entrada</td>
+              </tr>
+              <tr>
+                <td>NFD Validada Logística</td>
+                <td>Aguardando solicitação de coleta.</td>
+                <td><span class="status-pill await">Aguardar</span> • Resolvido após entrada</td>
+              </tr>
+              <tr>
+                <td>NFD Não Validada</td>
+                <td>Ticket aberto, mas com erro na nota ou no processo.</td>
+                <td><span class="status-pill action">Manifestar</span></td>
+              </tr>
+              <tr>
+                <td>NFD Sem Protocolo</td>
+                <td>Não há registro de atendimento para a nota.</td>
+                <td><span class="status-pill action">Manifestar</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-2" style="margin-top:18px;">
+          <div class="note">
+            <strong>Preenchimento correto:</strong> o campo Status deve usar apenas valores padronizados. O ideal é trabalhar com lista suspensa, sem digitação manual.
+          </div>
+          <div class="note">
+            <strong>Atualização do processo:</strong> o sistema gera a planilha, o SAC preenche os dados e o fluxo do SharePoint lê o ID da nota para atualizar a lista principal automaticamente.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:20px;">
+        <h3>Onde usar imagem nesta seção</h3>
+        <div class="image-slot">
+          <strong>Sugestão de uso</strong>
+          <small>Um print da planilha de integração ou da tela da lista pode entrar aqui, desde que acompanhado de legenda curta. A tabela de status deve continuar em HTML, não em imagem.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="automacoes" style="margin-top:40px;">
+      <div class="section-header">
+        <h2>Automações de apoio ao processo</h2>
+        <p>As automações sustentam a rotina, evitam retrabalho e garantem atualização coerente do controle.</p>
+      </div>
+      <div class="module-grid">
+        <div class="card module-card">
+          <h3>Fluxo de Importação</h3>
+          <ul class="check-list">
+            <li>Disparo pela criação de arquivo na pasta do SIEG.</li>
+            <li>Compara com Base de Entrada e Lista de Controle.</li>
+            <li>Importa apenas o que não existe.</li>
+            <li>Ignora emissão própria e status cancelado.</li>
+            <li>Envia resumo no Teams.</li>
+          </ul>
+        </div>
+        <div class="card module-card">
+          <h3>Definição de Cadastro</h3>
+          <ul class="check-list">
+            <li>Consulta o CNPJ na Base Unificada.</li>
+            <li>Define Cliente, Fornecedor, Consumo ou Transportadora.</li>
+            <li>Se houver mais de um tipo, marca como <strong>Misto</strong>.</li>
+            <li>Se não localizar, direciona para <strong>Sem Cadastro</strong>.</li>
+          </ul>
+        </div>
+        <div class="card module-card">
+          <h3>Fluxos de Andamento</h3>
+          <ul class="check-list">
+            <li>Status inicial na criação.</li>
+            <li>Atualização diária às 07:00 com base no tempo.</li>
+            <li>Atualização por gatilho quando campos são alterados manualmente.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">Fluxos e automações finalizados. Agora valide o aprendizado no quiz.</div></footer>
+</body>
+</html>

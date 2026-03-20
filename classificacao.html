@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classificação | Portal de Treinamento Fiscal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><span class="brand-badge">PF</span><span>Portal de Treinamento Fiscal</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="visao-geral.html">Visão Geral</a>
+        <a href="controle.html">Controle</a>
+        <a class="active" href="classificacao.html">Classificação</a>
+        <a href="fluxos.html">Fluxos</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content-hero">
+    <div class="container">
+      <div class="card">
+        <span class="kicker">Módulo 3</span>
+        <h1>Classificação das Operações</h1>
+        <p>Este módulo apresenta os três tipos de operação tratados no controle. O objetivo aqui é entender o papel de cada classificação no direcionamento do processo, sem entrar ainda nos detalhes completos do fluxo.</p>
+        <div class="button-group">
+          <a class="btn btn-secondary" href="controle.html">Módulo anterior</a>
+          <a class="btn btn-primary" href="fluxos.html">Próximo módulo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container module-grid">
+      <div class="card module-card">
+        <div class="card-title-row">
+          <h2>Consumo</h2>
+          <span class="tag success">Objetivo</span>
+        </div>
+        <p>Operação orientada à identificação do responsável pelo fornecedor e à condução da cobrança até o retorno e a entrada da nota.</p>
+        <ul class="check-list">
+          <li>Foco em responsabilização</li>
+          <li>Leitura prática para cobrança</li>
+          <li>Encerramento por entrada no sistema</li>
+        </ul>
+      </div>
+
+      <div class="card module-card">
+        <div class="card-title-row">
+          <h2>Fornecedor</h2>
+          <span class="tag warning">Critério</span>
+        </div>
+        <p>Operação dependente da finalidade da nota. A leitura correta da natureza da nota define se o processo segue para validação, manifestação ou recebimento.</p>
+        <ul class="check-list">
+          <li>Notas normais</li>
+          <li>Devolução</li>
+          <li>Ajuste</li>
+        </ul>
+      </div>
+
+      <div class="card module-card">
+        <div class="card-title-row">
+          <h2>Cliente</h2>
+          <span class="tag danger">Complexidade</span>
+        </div>
+        <p>Operação com maior volume e dependência de integração com o SAC, especialmente nas notas de devolução e nos retornos via planilha.</p>
+        <ul class="check-list">
+          <li>Integração com SAC</li>
+          <li>Status padronizados</li>
+          <li>Atualização automática da lista</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top:20px;">
+      <div class="card">
+        <h2>Ponto central da classificação</h2>
+        <p>A classificação correta não é apenas uma etapa de organização. Ela define o caminho da nota, a exibição em que ela será tratada e quais automações ou ações manuais poderão ocorrer depois.</p>
+        <div class="flow">
+          <div class="flow-step" data-step="1">
+            <strong>Classificar corretamente</strong>
+            <p>A nota entra no contexto operacional certo.</p>
+          </div>
+          <div class="flow-step" data-step="2">
+            <strong>Direcionar a tratativa</strong>
+            <p>O usuário visualiza apenas as colunas relevantes e executa a ação adequada.</p>
+          </div>
+          <div class="flow-step" data-step="3">
+            <strong>Acionar fluxo ou acompanhamento</strong>
+            <p>O processo continua com base na regra específica da operação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">Módulo 3 concluído. Siga para Fluxos Operacionais.</div></footer>
+</body>
+</html>
